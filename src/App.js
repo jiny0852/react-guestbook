@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Ex00 from './pages/Ex00';
+import AddList from './pages/AddList';
+import DeleteForm from './pages/DeleteForm';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path='/ex00' element={<Ex00 />} />
+          <Route path='/list' element={<AddList />} />
+          <Route path='/delete' element={<DeleteForm />} />
+
+
+        </Routes>
+      </BrowserRouter>
+
     </div>
+
   );
+
 }
 
 export default App;
